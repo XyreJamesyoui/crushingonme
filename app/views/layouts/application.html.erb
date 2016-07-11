@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Crushing On Me</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div>
+  <% if current_user %>
+    Signed in as <strong><%= current_user.name %></strong>!
+  <% else %>
+    <script type="text/javascript">
+    window.location.href="/auth/facebook"
+    </script>
+  <% end %>
+</div>
+<%= yield %>
+
+</body>
+</html>

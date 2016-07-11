@@ -1,0 +1,16 @@
+<h1>Crushing On Me</h1>
+<% if current_user %>
+  <% if current_user.page_active != true %>
+    <%= link_to "Activate Your Page!", {:controller => :application, :action => :activate_page} %>
+  <% else %>
+    <h3>Pass your page link around! - http://localhost:3000/users/<%=current_user.id%></h3>
+    <h3>Your secret admirers said...</h3>
+<% current_user.crushes.each do |crush| %>
+<p>
+  <strong><%= crush.message%></strong><br>
+  <%= crush.updated_at.to_formatted_s(:short)  %>
+</p>
+<% end%>
+  <% end %>
+<br><%= link_to "Sign out", {:controller => :sessions, :action => :destroy} %>
+<% end %>
