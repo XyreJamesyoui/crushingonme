@@ -3,7 +3,7 @@
   <% if current_user.page_active != true %>
     <%= link_to "Activate Your Page!", {:controller => :application, :action => :activate_page} %>
   <% else %>
-    <h3>Pass your page link around! - http://localhost:3000/users/<%=current_user.id%></h3>
+    <h3>Pass your page link around! - https://vast-beyond-16284.herokuapp.com/users/<%=current_user.id%></h3>
     <h3>Your secret admirers said...</h3>
 <% current_user.crushes.each do |crush| %>
 <p>
