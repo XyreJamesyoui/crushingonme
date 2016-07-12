@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     @show_user = User.find(params[:id])
     if current_user
       if @show_user.id == current_user.id
-        redirect_to root_path
+        #redirect_to root_path#
       end
     end
   end
