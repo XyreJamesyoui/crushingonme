@@ -3,7 +3,9 @@ source 'https://rubygems.org'
 gem 'omniauth-facebook', '~> 1.4.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
-# Use sqlite3 as the database for Active Record
+# Use sqlite3 as the database for Active Record on development
+gem 'sqlite3'
+# Use postgresql as the database for Active Record on production
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
