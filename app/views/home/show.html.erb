@@ -1,16 +1,39 @@
-<h1>Crushing On Me</h1>
 <% if current_user %>
   <% if current_user.page_active != true %>
-    <%= link_to "Activate Your Page!", {:controller => :application, :action => :activate_page} %>
-  <% else %>
-    <h3>Pass your page link around! - https://vast-beyond-16284.herokuapp.com/users/<%=current_user.id%></h3>
-    <h3>Your secret admirers said...</h3>
-<% current_user.crushes.each do |crush| %>
-<p>
-  <strong><%= crush.message%></strong><br>
-  <%= crush.updated_at.to_formatted_s(:short)  %>
-</p>
-<% end%>
-  <% end %>
-<br><%= link_to "Sign out", {:controller => :sessions, :action => :destroy} %>
+    <center style="padding: 2em"><a class="w3-btn w3-pink" href="/activate_page">Activate your page!</a></center>
+    <% else %>
+        <h3>Pass your page link around! - https://vast-beyond-16284.herokuapp.com/users/<%=current_user.id%></h3>
+        <h3>Your secret admirers said...</h3>
+        <% current_user.crushes.each do |crush| %>
+            <div class="w3-container w3-leftbar w3-pink">
+                <strong><%= crush.message%></strong><br>
+                <%= crush.updated_at.to_formatted_s(:short)  %>
+            </div>
+        <% end%>
+    <% end %>
 <% end %>
+<script>
+      window.fbAsyncInit = function() {
+        FB.Event.subscribe(
+          'ad.loaded',
+          function(placementId) {
+            console.log('Audience Network ad loaded');
+          }
+        );
+        FB.Event.subscribe(
+          'ad.error',
+          function(errorCode, errorMessage, placementId) {
+            console.log('Audience Network error (' + errorCode + ') ' + errorMessage);
+          }
+        );
+      };
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk/xfbml.ad.js#xfbml=1&version=v2.5&appId=1102359449835622";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+<div class="fb-ad" data-placementid="1102359449835622_1109789369092630" data-format="300x250" data-testmode="false"></div>
+      
