@@ -1,6 +1,5 @@
 <% if @show_user %>
   <h3>Confess your crush for <%= @show_user.name %></h3>
-  <img src="<%= current_user.picture_url%>">
   <%= form_tag("#{@show_user.id}/add_crush", method: "post") do %>
     <%= text_area_tag(:message) %><br>
     <%= submit_tag("Submit")%>
