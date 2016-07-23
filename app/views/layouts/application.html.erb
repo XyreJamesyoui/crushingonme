@@ -21,7 +21,7 @@
     <li style="float: right"><div class="w3-dropdown-hover w3-right" style="background-color: #ff3399">     
         <img src="<%= current_user.picture_url.sub! 'http://', 'https://'%>" style="padding:0.1em"/>
         <div class="w3-dropdown-content w3-pink" style="right:0;border-style: solid; border-color: #ff3399">
-            <p>Signed in as <strong><%= current_user.name %></strong></p>
+            <centre><p>Signed in as <strong><%= current_user.name %></strong></p></centre>
             <center style="border-top-style: solid; border-top-color: #ff3399"><%= link_to "Sign out", {:controller => :sessions, :action => :destroy} %></center>
         </div>
     </div>
