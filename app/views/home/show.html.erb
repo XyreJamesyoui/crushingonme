@@ -2,7 +2,7 @@
   <% if current_user.page_active != true %>
     <center style="padding: 1.5em"><a class="w3-btn w3-pink" href="/activate_page">Activate your page!</a></center>
     <% else %>
-        <h3>Pass your page link around, dickhead! - https://vast-beyond-16284.herokuapp.com/users/<%=current_user.id%></h3>
+        <h3>Pass your page link around! - https://vast-beyond-16284.herokuapp.com/users/<%=current_user.id%></h3>
         <h3>Your secret admirers said...</h3>
         <% current_user.crushes.each do |crush| %>
             <div class="w3-container w3-leftbar w3-pink">
